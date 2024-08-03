@@ -1,5 +1,5 @@
-export const fetchAnime = async() => {
-    const response = await fetch("https://api.jikan.moe/v4/top/anime?limit=15")
+export const fetchAnime = async(url: string) => {
+    const response = await fetch(url)
     const data = await response.json()
     return data;
 }
