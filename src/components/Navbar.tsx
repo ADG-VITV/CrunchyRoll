@@ -2,14 +2,14 @@ import { BsSearch } from "react-icons/bs";
 import { FaRegBookmark } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { PiCrownSimpleFill } from "react-icons/pi";
 
 export default function Navbar() {
   return (
     <>
-      <nav className="flex items-center justify-between h-16 px-16 bg-[#23252b] text-white fixed w-[100vw]">
-        {/* <div className="flex w-[25rem]"> */}
+      <nav className="flex items-center justify-between h-16 px-16 bg-[#23252b] text-white fixed w-[100vw] z-10">
         <svg
-          className="logo-icon fill-current text-orange-600 mr-4 w-[10rem]"
+          className="logo-icon fill-current text-orange-600 mr-4 w-[18rem]"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 303 52"
           data-t="crunchyroll-horizontal-svg"
@@ -31,9 +31,14 @@ export default function Navbar() {
             <p className="mr-1">News</p> <IoMdArrowDropdown />
           </span>
         </div>
-
-        {/* </div> */}
         <div className="m-0 p-0 flex w-full h-full justify-end">
+          <span className="flex justify-center items-center px-4 text-yellow-600 hover:bg-gray-950 h-[100%] text-2xl ">
+            <PiCrownSimpleFill />
+            <div className="text-xs ml-1">
+                <p>TRY FREE</p>
+                <p className="text-white">PREMIUM</p>
+            </div>
+          </span>
           <span className="flex justify-center items-center px-4 text-gray-300 hover:bg-gray-950 h-[100%] text-2xl ">
             <BsSearch />
           </span>
