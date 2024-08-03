@@ -25,7 +25,7 @@ body{
     position: absolute;
     opacity: 0.4;
 }
-
+ 
 .cardContainer:hover .cardOverlay{
     display: block;
 }
