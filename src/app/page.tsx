@@ -40,7 +40,7 @@ const Home: React.FC = () => {
     <>
       <Swiper items={animes} />
       <main className="flex flex-col w-[100vw] overflow-y-scroll">
-        <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black">
+        <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black gap-6">
           {animes.map((anime) => (
             <Card
               key={anime.mal_id}

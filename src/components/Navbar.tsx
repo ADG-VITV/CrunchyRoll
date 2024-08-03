@@ -32,7 +32,7 @@ export default function Navbar() {
           </span>
         </div>
         <div className="m-0 p-0 flex w-full h-full justify-end">
-          <span className="flex justify-center items-center px-4 text-yellow-600 hover:bg-gray-950 h-[100%] text-2xl ">
+          <span className="flex justify-center items-center px-4 text-yellow-400 hover:bg-gray-950 h-[100%] text-2xl ">
             <PiCrownSimpleFill />
             <div className="text-xs ml-1">
                 <p>TRY FREE</p>

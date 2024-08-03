@@ -1,7 +1,6 @@
 export default function Card(props: any) {
   return (
     <div className="cardContainer w-[20rem] h-[28rem]">
-
       <div className="animeInfo bg-gray-950 h-full w-full p-4">
         <p className="text-white text-md">{props.name}</p>
       </div>
