@@ -1,8 +1,6 @@
-// src/app/page.tsx
-"use client";
-import Swiper from "@/components/Carousel";
 import { fetchAnime } from "./action";
 import Card from "@/components/Card";
+import CarouselMap from "@/components/CarouselMap";
 
 interface Anime {
   mal_id: number;
@@ -42,7 +40,8 @@ const Home: React.FC = async () => {
 
   return (
     <>
-      <Swiper items={carouselView} />
+      
+      <CarouselMap item={carouselView} />
       <main className="flex flex-col w-[100vw] overflow-y-scroll">
         <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black gap-x-2">
           {seasonalReleaseView.map((anime: Anime) => (
