@@ -1,14 +1,9 @@
 // src/app/page.tsx
-"use client";
-
-import React, { useEffect, useState } from "react";
+'use client'
 import Swiper from "@/components/Carousel";
 import { fetchAnime } from "./action";
 import Card from "@/components/Card";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 interface Anime {
   mal_id: number;
@@ -20,28 +15,33 @@ interface Anime {
       large_image_url: string;
     };
   };
+  trailer: {
+    youtube_id: string,
+      url: string,
+      embed_url: string,
+      images: {
+        image_url: string,
+        small_image_url: string,
+        medium_image_url: string,
+        large_image_url: string,
+        maximum_image_url: string
+      }
+    },
   title_english: string;
 }
 
-const Home: React.FC = () => {
-  const [animes, setAnimes] = useState<Anime[]>([]);
+const Home: React.FC = async() => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await fetchAnime();
-      console.log("Fetched anime:", result.data); // Debug log
-      setAnimes(result.data);
-    };
-
-    fetchData();
-  }, []);
+  const mostViewedAnime = await fetchAnime("https://api.jikan.moe/v4/top/anime?limit=6")
 
   return (
     <>
-      <Swiper items={animes} />
+      <Swiper items={mostViewedAnime.data} />
       <main className="flex flex-col w-[100vw] overflow-y-scroll">
         <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black gap-6">
           {animes.map((anime) => (
+        <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black gap-x-2">
+          {mostViewedAnime.data.map((anime: Anime) => (
             <Card
               key={anime.mal_id}
               img={anime.images.webp.large_image_url}

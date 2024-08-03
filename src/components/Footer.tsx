@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border border-gray-600"></div>
+      <div className="border border-gray-600 mt-4"></div>
       <div className="flex justify-between w-full h-full mt-5">
         <div className="">
           <p>SONY PICTURES | &copy; Crunchyroll, LLC</p>
