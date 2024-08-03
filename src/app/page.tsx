@@ -37,18 +37,20 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <main className="flex flex-col w-[100vw] overflow-y-scroll">
+    <>
       <Swiper items={animes} />
-      <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black">
-        {animes.map((anime) => (
-          <Card
-            key={anime.mal_id}
-            img={anime.images.webp.large_image_url}
-            name={anime.title_english}
-          />
-        ))}
-      </div>
-    </main>
+      <main className="flex flex-col w-[100vw] overflow-y-scroll">
+        <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black">
+          {animes.map((anime) => (
+            <Card
+              key={anime.mal_id}
+              img={anime.images.webp.large_image_url}
+              name={anime.title_english}
+            />
+          ))}
+        </div>
+      </main>
+    </>
   );
 };
 
