@@ -1,58 +1,37 @@
 import { fetchAnime } from "./action";
-import Card from "@/components/Card";
 import CarouselMap from "@/components/CarouselMap";
-
-interface Anime {
-  mal_id: number;
-  title: string;
-  synopsis: string;
-  url: string;
-  images: {
-    webp: {
-      large_image_url: string;
-    };
-  };
-  trailer: {
-    youtube_id: string;
-    url: string;
-    embed_url: string;
-    images: {
-      image_url: string;
-      small_image_url: string;
-      medium_image_url: string;
-      large_image_url: string;
-      maximum_image_url: string;
-    };
-  };
-  title_english: string;
-}
+import CardSection from "@/components/CardSection";
 
 const Home: React.FC = async () => {
-  const mostViewedAnime = await fetchAnime(
+  const carouselView = await fetchAnime(
     "https://api.jikan.moe/v4/top/anime?limit=6"
   );
-  const carouselView = mostViewedAnime.data;
 
-  const seasonalRelease = await fetchAnime(
+  const seasonalReleaseView = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now?limit=15"
   );
-  const seasonalReleaseView = seasonalRelease.data;
+
+  const hindidubsView = await fetchAnime(
+    "https://api.jikan.moe/v4/seasons/2022/spring?limit=15"
+  );
 
   return (
     <>
-      
       <CarouselMap item={carouselView} />
-      <main className="flex flex-col w-[100vw] overflow-y-scroll">
-        <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black gap-x-2">
-          {seasonalReleaseView.map((anime: Anime) => (
-            <Card
-              key={anime.mal_id}
-              img={anime.images.webp.large_image_url}
-              name={anime.title_english}
-            />
-          ))}
-        </div>
-      </main>
+      <section className="flex flex-col w-[100vw] overflow-y-scroll">
+        <CardSection apicall={seasonalReleaseView} />
+      </section>
+      <section className="flex flex-col w-[100vw] overflow-y-scroll">
+        <CardSection apicall={hindidubsView} />
+      </section>
+      <img
+        src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/54c1578f7c441dd7d9d610a2ba7c5f30.jpg"
+        alt="banner"
+        className="items-center justify-center mx-auto object-cover w-[85vw] h-[72vh]"
+      />
+      <section className="flex flex-col w-[100vw] overflow-y-scroll">
+        <CardSection apicall={hindidubsView} />
+      </section>
     </>
   );
 };
