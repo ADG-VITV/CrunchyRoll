@@ -32,6 +32,20 @@ const Home: React.FC = async () => {
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
         <CardSection apicall={hindidubsView} />
       </section>
+      <section className="flex flex-col items-center m-4">
+        <img
+          src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"
+          alt=""
+          className="w-[15rem]"
+        />
+        <h1 className="text-white text-xl">
+          Still looking for something to watch?
+        </h1>
+        <h1 className="text-white text-xl">Check out our full library</h1>
+        <button className="text-orange-600 border-[3px] border-orange-600 w-28 h-10 mt-6">
+          View All
+        </button>
+      </section>
     </>
   );
 };
