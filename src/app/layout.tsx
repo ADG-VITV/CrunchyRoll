@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Crunchy Roll clone website",
+  title: "Crunchyroll: Watch Popular Anime, Play Games & Shop Online",
   description: "A clone of crunchy roll made with ADG",
 };
 

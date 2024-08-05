@@ -26,7 +26,7 @@ interface Anime {
 export default function CardSection({ apicall }: { apicall: Anime[] }) {
     return (
       <>
-        <div className="flex overflow-y-auto w-[250vw] m-[4rem] bg-black gap-x-2">
+        <div className="flex overflow-y-auto w-[250vw] mx-[4rem] bg-black gap-x-2 mb-[4.5rem]">
           {apicall.map((anime: Anime) => (
             <Card
               key={anime.mal_id}
