@@ -29,13 +29,19 @@ const Home: React.FC = async () => {
   let specialView: Anime = specialViewArray[1] || defaultApi;
   let specialView2: Anime = specialViewArray[2] || defaultApi;
 
-  const episodeView = await fetchAnime("https://api.jikan.moe/v4/seasons/now?limit=5");
+  const episodeView = await fetchAnime(
+    "https://api.jikan.moe/v4/seasons/now?limit=5"
+  );
   return (
     <>
       <CarouselMap item={carouselView} />
 
-
-      <Heading title={"July 2024 Seasonal Sampler"} subtitle={"Check out the first few episodes of these new shows for free!"} />
+      <Heading
+        title={"July 2024 Seasonal Sampler"}
+        subtitle={
+          "Check out the first few episodes of these new shows for free!"
+        }
+      />
       {/* <section className="flex flex-col w-[100vw] overflow-y-scroll"> */}
       <CardSection item={seasonalSamplerView} />
       {/* </section> */}
@@ -53,14 +59,26 @@ const Home: React.FC = async () => {
         alt="banner"
         className="items-center justify-center mx-auto object-cover w-[91vw] h-[55vh] mb-[6.5rem]"
       />
-      <Heading 
+      <Heading
         title={"Hindi Dubs Available on Crunchyroll!"}
         subtitle={"Check out these great Hindi dubs!"}
       />
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
         <CardSection item={hindidubsView} />
       </section>
-
+      <section>
+        <Special apicall={specialView} />
+      </section>
+      <section>
+        <Special apicall={specialView2} />
+      </section>
+      <section>
+        <Heading
+          title={"Episodes"}
+          subtitle={"Watch the latest episodes of your favorite shows!"}
+        />
+        <EpisodeMap apicall={episodeView} />
+      </section>
       <section className="flex flex-col items-center m-4">
         <img
           src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"
