@@ -72,11 +72,12 @@ const Home: React.FC = async () => {
       <section>
         <Special apicall={specialView2} />
       </section>
-      <section>
+      <section className="w-[100vw]">
         <Heading
-          title={"Episodes"}
+          title={"New Episodes"}
           subtitle={"Watch the latest episodes of your favorite shows!"}
         />
+        <div className="border border-t-gray-500 w-[90vw] mx-auto my-0"></div>
         <EpisodeMap apicall={episodeView} />
       </section>
       <section className="flex flex-col items-center m-4">
