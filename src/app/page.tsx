@@ -1,6 +1,8 @@
 import { fetchAnime } from "./action";
 import CarouselMap from "@/components/CarouselMap";
 import CardSection from "@/components/CardSection";
+import Special from "@/components/Special";
+import { Anime } from "@/interfaces/Anime";
 
 const Home: React.FC = async () => {
   const carouselView = await fetchAnime(
@@ -14,6 +16,11 @@ const Home: React.FC = async () => {
   const hindidubsView = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/2022/spring?limit=15"
   );
+  const specialViewArray = await fetchAnime(
+    "https://api.jikan.moe/v4/seasons/2022/spring?limit=5"
+  );
+  const specialView: Anime = specialViewArray[3];
+
 
   return (
     <>
@@ -32,7 +39,10 @@ const Home: React.FC = async () => {
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
         <CardSection apicall={hindidubsView} />
       </section>
-      <section className="flex flex-col items-center m-4">
+      <section className="my-8">
+        <Special apicall={specialView} />
+      </section>
+      <section className="flex flex-col items-center my-24">
         <img
           src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"
           alt=""
