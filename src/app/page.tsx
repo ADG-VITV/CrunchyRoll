@@ -3,6 +3,7 @@ import CarouselMap from "@/components/CarouselMap";
 import CardSection from "@/components/CardSection";
 import Special from "@/components/Special";
 import { Anime } from "@/interfaces/Anime";
+import { defaultApi } from "./defaultApi";
 
 const Home: React.FC = async () => {
   const carouselView = await fetchAnime(
@@ -19,22 +20,8 @@ const Home: React.FC = async () => {
   const specialViewArray = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/2022/spring?limit=5"
   );
-  // console.clear();
-  // console.log(
-  //   "*************************************************************************************"
-  // );
-  // console.log(specialViewArray[4]);
-  // const index: number = 3;
-  // let specialView: Anime = specialViewArray.filter(
-  //   (item: Anime, index: number) => index == 2
-  // )[0];
+  let specialView: Anime = specialViewArray[3] || defaultApi;
 
-  let specialView: Anime | null;
-  if (specialViewArray) {
-    specialView = specialViewArray[4];
-  } else {
-    specialView = null;
-  }
   return (
     <>
       <CarouselMap item={carouselView} />

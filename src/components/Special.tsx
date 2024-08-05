@@ -3,25 +3,25 @@ import { Anime } from "@/interfaces/Anime";
 import { truncate } from "@/app/truncate";
 
 interface SpecialProps {
-  apicall: Anime | null;
+  apicall: Anime;
 }
 
 const Special: React.FC<SpecialProps> = ({ apicall }) => {
-  const truncatedDescription = truncate(apicall!.synopsis, 50);
+  const truncatedDescription = truncate(apicall.synopsis, 50);
 
   return (
     <section className="w-[92%] h-[25rem] flex justify-between mx-auto text-white">
       <div className="w-[50%] mr-8">
-        {apicall!.trailer?.images?.medium_image_url && (
+        {apicall.trailer?.images?.medium_image_url && (
           <img
-            src={apicall!.trailer.images.medium_image_url}
-            alt={apicall!.title}
+            src={apicall.trailer.images.medium_image_url}
+            alt={apicall.title}
             className="w-full h-full"
           />
         )}
       </div>
       <div className="w-[50%] flex flex-col justify-center text-white">
-        <h1 className="py-2">{apicall!.title_english || apicall!.title}</h1>
+        <h1 className="py-2">{apicall.title_english || apicall.title}</h1>
         <p className="text-gray-500 py-2">Series &#x2B29; Sub | Dub </p>
         <p className="py-2">{truncatedDescription}</p>
         <div className="flex py-2">
