@@ -29,8 +29,12 @@ const Home: React.FC = async () => {
   //   (item: Anime, index: number) => index == 2
   // )[0];
 
-  const specialView: Anime =
-    specialViewArray.length > 3 ? specialViewArray[3] : {};
+  let specialView: Anime | null;
+  if (specialViewArray) {
+    specialView = specialViewArray[4];
+  } else {
+    specialView = null;
+  }
   return (
     <>
       <CarouselMap item={carouselView} />
