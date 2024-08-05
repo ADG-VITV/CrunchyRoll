@@ -63,7 +63,7 @@ const Home: React.FC = async () => {
         <CardSection apicall={hindidubsView} />
       </section>
       <section className="my-8">
-        <Special apicall={specialViewArray[3]} />
+        <Special apicall={specialViewArray[0]} />
       </section>
       <section className="flex flex-col items-center my-24">
         <img
