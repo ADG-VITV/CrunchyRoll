@@ -19,8 +19,7 @@ const Home: React.FC = async () => {
   const specialViewArray = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/2022/spring?limit=5"
   );
-  const specialView: Anime =
-    specialViewArray.length > 3 ? specialViewArray[3] : ({} as Anime);
+  const specialView: Anime = specialViewArray[3];
 
   return (
     <>
