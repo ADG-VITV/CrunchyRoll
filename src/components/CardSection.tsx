@@ -1,12 +1,14 @@
+import { defaultApi } from "@/app/defaultApi";
 import Card from "@/components/Card";
 import { Anime } from "@/interfaces/Anime";
 
 interface CardSectionProps {
-  apicall?: Anime[];
+  apicall: Anime[];
 }
 
 // export default function CardSection({ apicall }: { apicall: Anime[] }) {
 const CardSection: React.FC<CardSectionProps> = ({ apicall }) => {
+  apicall = apicall || [defaultApi];
   return (
     <>
       <div className="flex overflow-y-auto w-[250vw] mx-[4rem] bg-black gap-x-2 mb-[4.5rem]">
