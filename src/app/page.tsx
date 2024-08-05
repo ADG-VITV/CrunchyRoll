@@ -34,22 +34,18 @@ const Home: React.FC = async () => {
     <>
       <CarouselMap item={carouselView} />
 
-      <Heading
-        title={"July 2024 Seasonal Sampler"}
-        subtitle={
-          "Check out the first few episodes of these new shows for free!"
-        }
-      />
-      <section className="flex flex-col w-[100vw] overflow-y-scroll">
-        <CardSection apicall={seasonalSamplerView} />
-      </section>
+
+      <Heading title={"July 2024 Seasonal Sampler"} subtitle={"Check out the first few episodes of these new shows for free!"} />
+      {/* <section className="flex flex-col w-[100vw] overflow-y-scroll"> */}
+      <CardSection item={seasonalSamplerView} />
+      {/* </section> */}
 
       <Heading
         title={"Free-to-Watch Sports Anime"}
         subtitle={"Go for glory with these athletes!"}
       />
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
-        <CardSection apicall={sportsAnimeView} />
+        <CardSection item={sportsAnimeView} />
       </section>
 
       <img
@@ -62,21 +58,9 @@ const Home: React.FC = async () => {
         subtitle={"Check out these great Hindi dubs!"}
       />
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
-        <CardSection apicall={hindidubsView} />
+        <CardSection item={hindidubsView} />
       </section>
-      <section>
-        <Special apicall={specialView} />
-      </section>
-      <section>
-        <Special apicall={specialView2} />
-      </section>
-      <section>
-        <Heading
-          title={"Episodes"}
-          subtitle={"Watch the latest episodes of your favorite shows!"}
-        />
-        <EpisodeMap apicall={episodeView} />
-      </section>
+
       <section className="flex flex-col items-center m-4">
         <img
           src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"

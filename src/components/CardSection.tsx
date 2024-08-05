@@ -1,25 +1,16 @@
-import { defaultApi } from "@/app/defaultApi";
-import Card from "@/components/Card";
-import { Anime } from "@/interfaces/Anime";
+"use client";
+import Card from "./Card";
 
-interface CardSectionProps {
-  apicall: Anime[];
+interface CardSection {
+  item: any;
 }
 
-const CardSection: React.FC<CardSectionProps> = ({ apicall }) => {
-  apicall = apicall || [defaultApi];
-  return (
-    <>
-      <div className="flex overflow-y-auto w-[250vw] mx-[4rem] bg-black gap-x-2 mb-[4.5rem]">
-        {apicall!.map((anime: Anime) => (
-          <Card
-            key={anime.mal_id}
-            img={anime.images.webp.large_image_url}
-            name={anime.title_english}
-          />
-        ))}
-      </div>
-    </>
-  );
+const CardSection: React.FC<CardSection> = ({ item }) => {
+  return(
+    <div className="">
+      <Card items={item} />;
+    </div>
+  ) 
 };
+
 export default CardSection;

@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 * {
   font-family: "Lato", "Helvetica Neue", helvetica, sans-serif;
   font-weight: 300;
@@ -23,23 +22,23 @@ body {
   display: none;
 }
 
-.carousel-item {
+/* .carousel-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* Ensure the carousel item takes full width */
+  width: 100%; Ensure the carousel item takes full width 
 }
 
 .carousel-item img {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-}
+} */
 
-.carousel-item h3 {
+/* .carousel-item h3 {
   margin-top: 10px;
   color: white;
-}
+} */
 
 .container {
   position: relative;
@@ -115,4 +114,54 @@ body {
 
 .cardContainer:hover .animeInfo{
     opacity: 1;
+}
+
+
+button:hover span {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
+
+/* PRODUCTS */
+.product {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-container {
+  overflow: auto; /* Enable scrolling for the container */
+  display: flex;
+  /* width: calc(100% - 80px); Adjust for button width */
+  height: 100%;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 1rem; /* Adjust width as needed */
+  height: 1rem; /* Adjust height as needed */
+  position: absolute;
+  top: 50%; /* Vertically center the buttons */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10; /* Ensure buttons are on top of images */
+}
+
+.pre-btn {
+  left: 10px; /* Adjust as needed */
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 10px; /* Adjust as needed */
 }
