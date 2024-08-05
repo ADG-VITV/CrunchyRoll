@@ -19,8 +19,13 @@ const Home: React.FC = async () => {
   const specialViewArray = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/2022/spring?limit=5"
   );
-  const index: number = 3;
-  let specialView: Anime = specialViewArray[index];
+  // console.clear();
+  // console.log(
+  //   "*************************************************************************************"
+  // );
+  // console.log(specialViewArray[4]);
+  // const index: number = 3;
+  // let specialView: Anime = specialViewArray[index];
 
   return (
     <>
@@ -58,7 +63,7 @@ const Home: React.FC = async () => {
         <CardSection apicall={hindidubsView} />
       </section>
       <section className="my-8">
-        <Special apicall={specialView} />
+        <Special apicall={specialViewArray[3]} />
       </section>
       <section className="flex flex-col items-center my-24">
         <img
