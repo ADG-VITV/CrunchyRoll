@@ -6,24 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
-
-interface CarouselItem {
-  mal_id: number;
-  title: string;
-  trailer: {
-    youtube_id: string;
-    url: string;
-    embed_url: string;
-    images: {
-      image_url: string;
-      small_image_url: string;
-      medium_image_url: string;
-      large_image_url: string;
-      maximum_image_url: string;
-    };
-  };
-  title_english: string;
-}
+import { CarouselItem } from "@/interfaces/Carousel";
 
 interface CarouselProps {
   items: CarouselItem[];
