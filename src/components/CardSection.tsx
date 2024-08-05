@@ -6,7 +6,6 @@ interface CardSectionProps {
   apicall: Anime[];
 }
 
-// export default function CardSection({ apicall }: { apicall: Anime[] }) {
 const CardSection: React.FC<CardSectionProps> = ({ apicall }) => {
   apicall = apicall || [defaultApi];
   return (

@@ -5,7 +5,7 @@ import Special from "@/components/Special";
 import { Anime } from "@/interfaces/Anime";
 import { defaultApi } from "./defaultApi";
 import Heading from "@/components/Heading";
-import Episode from "@/components/Episode";
+import EpisodeMap from "@/components/EpisodeMap";
 
 const Home: React.FC = async () => {
   const carouselView = await fetchAnime(
@@ -28,6 +28,8 @@ const Home: React.FC = async () => {
   );
   let specialView: Anime = specialViewArray[1] || defaultApi;
   let specialView2: Anime = specialViewArray[2] || defaultApi;
+
+  const episodeView = await fetchAnime("https://api.jikan.moe/v4/seasons/now?limit=5");
   return (
     <>
       <CarouselMap item={carouselView} />
@@ -55,7 +57,7 @@ const Home: React.FC = async () => {
         alt="banner"
         className="items-center justify-center mx-auto object-cover w-[91vw] h-[55vh] mb-[6.5rem]"
       />
-      <Heading
+      <Heading 
         title={"Hindi Dubs Available on Crunchyroll!"}
         subtitle={"Check out these great Hindi dubs!"}
       />
@@ -69,7 +71,11 @@ const Home: React.FC = async () => {
         <Special apicall={specialView2} />
       </section>
       <section>
-        <Episode/>
+        <Heading
+          title={"Episodes"}
+          subtitle={"Watch the latest episodes of your favorite shows!"}
+        />
+        <EpisodeMap apicall={episodeView} />
       </section>
       <section className="flex flex-col items-center m-4">
         <img
