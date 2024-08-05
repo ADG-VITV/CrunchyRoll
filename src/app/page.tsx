@@ -5,6 +5,7 @@ import Special from "@/components/Special";
 import { Anime } from "@/interfaces/Anime";
 import { defaultApi } from "./defaultApi";
 import Heading from "@/components/Heading";
+import Episode from "@/components/Episode";
 
 const Home: React.FC = async () => {
   const carouselView = await fetchAnime(
@@ -66,6 +67,9 @@ const Home: React.FC = async () => {
       </section>
       <section>
         <Special apicall={specialView2} />
+      </section>
+      <section>
+        <Episode/>
       </section>
       <section className="flex flex-col items-center m-4">
         <img
