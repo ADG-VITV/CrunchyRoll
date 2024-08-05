@@ -25,7 +25,9 @@ const Home: React.FC = async () => {
   // );
   // console.log(specialViewArray[4]);
   // const index: number = 3;
-  // let specialView: Anime = specialViewArray[index];
+  let specialView: Anime = specialViewArray.filter(
+    (item: Anime, index: number) => index == 2
+  )[0];
 
   return (
     <>
@@ -63,7 +65,7 @@ const Home: React.FC = async () => {
         <CardSection apicall={hindidubsView} />
       </section>
       <section className="my-8">
-        <Special apicall={specialViewArray[0]} />
+        <Special apicall={specialView} />
       </section>
       <section className="flex flex-col items-center my-24">
         <img
