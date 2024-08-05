@@ -25,10 +25,11 @@ const Home: React.FC = async () => {
   // );
   // console.log(specialViewArray[4]);
   // const index: number = 3;
-  let specialView: Anime = specialViewArray.filter(
-    (item: Anime, index: number) => index == 2
-  )[0];
+  // let specialView: Anime = specialViewArray.filter(
+  //   (item: Anime, index: number) => index == 2
+  // )[0];
 
+  const specialView: any = specialViewArray[4];
   return (
     <>
       <CarouselMap item={carouselView} />
