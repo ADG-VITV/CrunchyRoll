@@ -9,7 +9,7 @@ import { PiCrownSimpleFill } from "react-icons/pi";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#23252b] text-white py-8 px-44">
+    <footer className="bg-[#23252b] text-white py-8 px-44" style={{ background: 'rgb(0,0,0)', background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(7,52,75,1) 100%)' }}>
       <div className="flex justify-between">
         <div>
           <h1 className="font-bold">Navigation</h1>
