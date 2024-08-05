@@ -25,18 +25,36 @@ const Home: React.FC = async () => {
   return (
     <>
       <CarouselMap item={carouselView} />
-      <section className="flex flex-col w-[100vw] overflow-y-scroll">
+      <section className="flex flex-col w-[100vw] overflow-y-scroll mt-4">
+        <h1 className="text-3xl text-white mx-16">
+          July 2024 Seasonal Sampler
+        </h1>
+        <p className="text-md text-gray-500 mx-16">
+          Check out the first few episodes of these new shows for free!
+        </p>
         <CardSection apicall={seasonalReleaseView} />
       </section>
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
+        <h1 className="text-3xl text-white mx-16">
+          Free-to-Watch Sports Anime
+        </h1>
+        <p className="text-md text-gray-500 mx-16">
+          Go for glory with these athletes!
+        </p>
         <CardSection apicall={hindidubsView} />
       </section>
       <img
         src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/54c1578f7c441dd7d9d610a2ba7c5f30.jpg"
         alt="banner"
-        className="items-center justify-center mx-auto object-cover w-[85vw] h-[72vh]"
+        className="items-center justify-center mx-auto my-8 object-cover w-[85vw] h-[72vh]"
       />
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
+        <h1 className="text-3xl text-white mx-16">
+          Hindi Dubs Available on Crunchyroll!
+        </h1>
+        <p className="text-md text-gray-500 mx-16">
+          Check out these great Hindi dubs!
+        </p>
         <CardSection apicall={hindidubsView} />
       </section>
       <section className="my-8">
