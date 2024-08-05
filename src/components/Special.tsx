@@ -10,11 +10,11 @@ const Special: React.FC<SpecialProps> = ({ apicall }) => {
   const truncatedDescription = truncate(apicall.synopsis, 50);
 
   return (
-    <section className="w-[92%] h-[25rem] flex justify-between mx-auto text-white">
+    <section className="w-[92%] h-[25rem] flex justify-between my-8 mx-auto text-white">
       <div className="w-[50%] mr-8">
         {apicall.trailer?.images?.medium_image_url && (
           <img
-            src={apicall.trailer.images.medium_image_url}
+            src={apicall.trailer.images.maximum_image_url}
             alt={apicall.title}
             className="w-full h-full"
           />
