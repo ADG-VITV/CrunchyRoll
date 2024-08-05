@@ -26,7 +26,7 @@ const Home: React.FC = async () => {
     "https://api.jikan.moe/v4/seasons/now?limit=15"
   );
   let specialView: Anime = specialViewArray[1] || defaultApi;
-
+  let specialView2: Anime = specialViewArray[2] || defaultApi;
   return (
     <>
       <CarouselMap item={carouselView} />
@@ -61,7 +61,12 @@ const Home: React.FC = async () => {
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
         <CardSection apicall={hindidubsView} />
       </section>
-
+      <section>
+        <Special apicall={specialView} />
+      </section>
+      <section>
+        <Special apicall={specialView2} />
+      </section>
       <section className="flex flex-col items-center m-4">
         <img
           src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"
@@ -75,9 +80,6 @@ const Home: React.FC = async () => {
         <button className="text-orange-600 border-[3px] border-orange-600 w-28 h-10 mt-6">
           View All
         </button>
-      </section>
-      <section>
-        <Special apicall={specialView} />
       </section>
     </>
   );
