@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { Anime } from "@/interfaces/Anime";
 
 interface CardSectionProps {
-  apicall: Anime[];
+  apicall?: Anime[];
 }
 
 export default function CardSection({ apicall }: { apicall: Anime[] }) {
