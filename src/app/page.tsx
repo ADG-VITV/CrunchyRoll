@@ -6,6 +6,7 @@ import { Anime } from "@/interfaces/Anime";
 import { defaultApi } from "./defaultApi";
 import Heading from "@/components/Heading";
 import EpisodeMap from "@/components/EpisodeMap";
+import Banner from "@/components/Banner";
 
 const Home: React.FC = async () => {
   const carouselView = await fetchAnime(
@@ -28,6 +29,9 @@ const Home: React.FC = async () => {
   );
   let specialView: Anime = specialViewArray[1] || defaultApi;
   let specialView2: Anime = specialViewArray[2] || defaultApi;
+  let specialView3: Anime = specialViewArray[5] || defaultApi;
+  let bannerView: Anime = specialViewArray[3] || defaultApi;
+  let bannerView2: Anime = specialViewArray[4] || defaultApi;
 
   const episodeView = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now?limit=5"
@@ -35,17 +39,13 @@ const Home: React.FC = async () => {
   return (
     <>
       <CarouselMap item={carouselView} />
-
       <Heading
         title={"July 2024 Seasonal Sampler"}
         subtitle={
           "Check out the first few episodes of these new shows for free!"
         }
       />
-      {/* <section className="flex flex-col w-[100vw] overflow-y-scroll"> */}
       <CardSection item={seasonalSamplerView} />
-      {/* </section> */}
-
       <Heading
         title={"Free-to-Watch Sports Anime"}
         subtitle={"Go for glory with these athletes!"}
@@ -53,12 +53,9 @@ const Home: React.FC = async () => {
       <section className="flex flex-col w-[100vw] overflow-y-scroll">
         <CardSection item={sportsAnimeView} />
       </section>
-
-      <img
-        src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/54c1578f7c441dd7d9d610a2ba7c5f30.jpg"
-        alt="banner"
-        className="items-center justify-center mx-auto object-cover w-[91vw] h-[55vh] mb-[6.5rem]"
-      />
+      <section>
+        <Banner apicall={bannerView} />
+      </section>
       <Heading
         title={"Hindi Dubs Available on Crunchyroll!"}
         subtitle={"Check out these great Hindi dubs!"}
@@ -75,7 +72,19 @@ const Home: React.FC = async () => {
       <section>
         <Special apicall={specialView2} />
       </section>
-
+      <section>
+        <Banner apicall={bannerView2} />
+      </section>
+      <Heading title={"Most Popular This Season"} subtitle={""} />
+      <CardSection item={seasonalSamplerView} />
+      <Heading
+        title={"Tamil Dubs Available on Crunchyroll!"}
+        subtitle={"Great anime dubbed in Tamil"}
+      />
+      <CardSection item={sportsAnimeView} />
+      <section>
+        <Special apicall={specialView3} />
+      </section>
       <section className="flex flex-col items-center m-4">
         <img
           src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"
