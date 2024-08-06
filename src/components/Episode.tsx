@@ -1,6 +1,6 @@
 export default function Episode (props: any) {
   return (
-    <div className="text-white flex w-[28rem] h-[6rem] my-4">
+    <div className="text-white flex w-[26rem] h-[5rem] my-4">
       <div>
         <img
           src={props.img}
