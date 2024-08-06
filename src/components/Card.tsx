@@ -3,6 +3,7 @@ import { Anime } from '@/interfaces/Anime';
 import { defaultApi } from '@/app/defaultApi';
 import { IoStar } from "react-icons/io5";
 import { truncate } from '@/app/truncate';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 interface CardProps {
   items: Anime[];
@@ -44,11 +45,11 @@ const Card: React.FC<CardProps> = ({ items }) => {
 
   return (
     <section className="anime h-full">
-      <button className="pre-btn">
-        <img src="arrow.png" alt="Previous" />
+      <button className='pre-btn'>
+        <MdKeyboardArrowRight className="text-white text-5xl z-[9] hover:text-gray-500 transition-colors cursor-pointer absolute top-[12rem] rotate-180"/>
       </button>
       <button className="nxt-btn">
-        <img src="arrow.png" alt="Next" />
+        <MdKeyboardArrowRight className="text-white text-5xl z-[9] hover:text-gray-500 transition-colors cursor-pointer absolute top-[12rem] right-0"/>
       </button>
       <div className="anime-container overflow-auto scroll-smooth flex w-full h-full mr-10">
         {items.map((item, index) => (

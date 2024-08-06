@@ -37,31 +37,6 @@ body {
   display: none; /* Hide the scrollbar */
 }
 
-.pre-btn,
-.nxt-btn {
-  border: none;
-  width: 1rem; /* Adjust width as needed */
-  height: 1rem; /* Adjust height as needed */
-  position: absolute;
-  top: 50%; /* Vertically center the buttons */
-  transform: translateY(-50%); /* Adjust for vertical centering */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10; /* Ensure buttons are on top of images */
-}
-
-.pre-btn {
-  left: 10px; /* Adjust as needed */
-  transform: rotate(180deg);
-}
-
-.nxt-btn {
-  right: 10px; /* Adjust as needed */
-}
-
-
 .overlay:hover .animeDesc{
   display: none;
 }

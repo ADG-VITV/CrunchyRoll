@@ -3,6 +3,8 @@ import { useState } from "react"
 import { FaRegBookmark } from "react-icons/fa6"
 import { LuPlay } from "react-icons/lu"
 import { landingPageApi } from "@/interfaces/landingPage"
+import { MdKeyboardArrowRight } from "react-icons/md";
+
 
 export default function SwiperNoSwiping() {
 
@@ -22,7 +24,7 @@ export default function SwiperNoSwiping() {
             <div className="relative overflow-hidden">
                 <img src={landingPageApi[index].heroImage} alt="" className="h-[105vh] z-[5] w-[100vw] object-cover" />
                 <div onClick={() => handleDecrement()} className="absolute top-[10rem] z-[9] left-0 w-4 h-4">
-                    <img src="arrow.png" alt="" className="ml-4 rotate-180 z-[9] pre-button absolute top-[25vh]" />
+                    <MdKeyboardArrowRight className="text-white text-5xl rotate-180 z-[9] absolute top-[25vh] hover:text-gray-500 transition-colors cursor-pointer"/>
                 </div>
                 <img src={landingPageApi[index].logoImage} alt="" className="w-[20rem] z-[5] pb-4 ml-[3.25rem] scale-75 absolute bottom-[29rem] left-0" />
                 <p className="text-gray-500 text-sm font-normal pb-2 ml-[3.25rem] absolute top-[22.5rem] left-4 z-[5]">Sub | Dub</p>
@@ -40,7 +42,7 @@ export default function SwiperNoSwiping() {
                     </button>
                 </div>
                 <div onClick={() => setIndex((index + 1) % 5)} className="absolute top-[10rem] z-[9] left-0 w-4 h-4">
-                    <img src="arrow.png" alt="" className="ml-4 pre-button absolute top-[25vh] z-[9] left-[97vw]" />
+                    <MdKeyboardArrowRight className="text-white text-5xl absolute top-[25vh] z-[9] left-[97vw] hover:text-gray-500 transition-colors cursor-pointer"/>
                 </div>
                 <div className="absolute top-[0rem] left-[-10rem] z-[4] w-[140vw] h-[160vh] verticalfade"></div>
                 <div className="absolute top-[0rem] left-[-10rem] z-[4] w-[140vw] h-[160vh] horizontalfade"></div>
