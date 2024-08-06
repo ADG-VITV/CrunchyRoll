@@ -161,3 +161,7 @@ body {
 .overlay:hover .animeDesc{
   display: none;
 }
+
+.gradient{
+  background-image: linear-gradient(to top, rgb(31,55,66) , black);
+}
