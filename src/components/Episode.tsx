@@ -1,19 +1,22 @@
-export default function Episode (props: any) {
+export default function Episode(props: any) {
   return (
-    <div className="text-white flex w-[25rem] h-[6rem] ">
+    <div className="text-white flex w-[calc((100vw-8rem)/3)] h-[5rem] my-4 pr-4 gap-x-4">
       <div>
         <img
-          src="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/54c1578f7c441dd7d9d610a2ba7c5f30.jpg"
-          alt=""
+          src={props.img}
+          alt={props.name}
           className="w-36 h-full mr-4"
+          loading="lazy"
         />
       </div>
-      <div className="w-[50%]">
-        <h1 className="py-1">{props.title}</h1>
-        <p className="text-sm text-gray-500">{props.episodes}</p>
-        <div className="flex justify-between items-end">
+      <div className="w-full flex flex-col justify-center">
+        <h1 className="p-0 m-0">{props.name}</h1>
+        <p className="text-sm text-gray-500">
+          {props.episodes ? props.episodes : 5} Episodes
+        </p>
+        <div className="flex justify-between">
           <p className="text-sm text-gray-500">Sub | Dub</p>
-          <p className="text-sm text-gray-500">{props.time}</p>
+          <p className="text-sm text-[rgb(41,189,187)]">{props.duration}:00</p>
         </div>
       </div>
     </div>

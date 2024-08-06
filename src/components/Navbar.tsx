@@ -7,9 +7,9 @@ import { PiCrownSimpleFill } from "react-icons/pi";
 export default function Navbar() {
   return (
     <>
-      <nav className="flex items-center justify-between h-16 px-16 bg-[#23252b] text-white fixed w-[100vw] z-10">
+      <nav className="flex items-center justify-between h-16 px-16 bg-[#23252b] text-white fixed w-[100vw] z-20">
         <svg
-          className="logo-icon fill-current text-orange-600 mr-4 w-[18rem]"
+          className="logo-icon fill-current text-orange-600 mr-4 w-[18rem] hover:text-white transition-all duration-200"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 303 52"
           data-t="crunchyroll-horizontal-svg"

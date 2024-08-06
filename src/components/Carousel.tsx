@@ -24,14 +24,17 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
     >
       {items.map((item) => (
         <SwiperSlide key={item.mal_id}>
-          <div className="carousel-item">
+          <div className="carousel-item relative flex flex-col items-center w-full">
             <img
               src={item.trailer.images.maximum_image_url}
               alt={item.title_english}
+              className="w-full h-[95vh] z-[-1] object-cover mt-16"
+              loading="lazy"
             />
-            <h3>{item.title_english}</h3>
+            <div className="absolute top-16 z-[8] w-full h-full fade">
+            </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> 
       ))}
     </SwiperComponent>
   );
