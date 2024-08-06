@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Crunchyroll: Watch Popular Anime, Play Games & Shop Online",
-  description: "A clone of crunchy roll made with ADG",
+  description: "A clone of crunchy roll made by ADG",
 };
 
 export default function RootLayout({
