@@ -9,6 +9,7 @@ import EpisodeMap from "@/components/EpisodeMap";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
 import Watchmore from "@/components/Watchmore";
+import SwiperNoSwiping from "@/components/SwiperNoSwiping";
 
 const Home: React.FC = async () => {
   const carouselView = await fetchAnime(
@@ -40,9 +41,8 @@ const Home: React.FC = async () => {
   );
   return (
     <div className="relative">
-      <CarouselMap item={carouselView} />
-      <div className="absolute top-16 z-[8] w-full h-full fade">
-      </div>
+      {/* <CarouselMap item={carouselView} /> */}
+      <SwiperNoSwiping />
       <div className="absolute top-[90vh] w-full h-full z-10">
         <Heading
           title={"July 2024 Seasonal Sampler"}
