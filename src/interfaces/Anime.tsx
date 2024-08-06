@@ -25,4 +25,7 @@ export interface Anime {
   title_english: string;
   episodes: number;
   duration: string;
+  score:number;
+  scored_by:number;
+  background: string;
 }
