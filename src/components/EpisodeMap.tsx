@@ -8,7 +8,7 @@ interface EpisodeMapProp {
 const EpisodeMap: React.FC<EpisodeMapProp> = ({ apicall }) => {
   apicall = apicall || [defaultApi];
   return (
-    <>
+    <div className="w-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -46,8 +46,8 @@ const EpisodeMap: React.FC<EpisodeMapProp> = ({ apicall }) => {
           />
         ))}
       </div>
-      <button className="text-white bg-gray-800 mx-16 w-[92vw] h-10 hover:bg-gray-700 transition-all">SHOW MORE</button>
-    </>
+    <button className="text-white bg-gray-800 mx-16 w-[calc(100vw-8rem)] h-10 hover:bg-gray-700 transition-all">SHOW MORE</button>
+    </div>
   );
 };
 

@@ -33,7 +33,7 @@ const Special: React.FC<SpecialProps> = ({ apicall }) => {
             <LuPlay />
             &nbsp; Start Watching E1
           </button>
-          <button className="text-orange-600 text-l w-52 p-4 mr-3 h-11 font-semibold flex items-center justify-center border-orange-600 border-[3px]">
+          <button className="text-orange-600 text-l w-52 p-4 mr-3 h-11 font-semibold flex items-center justify-center border-orange-600 hover:border-orange-500 transition-all border-[3px]">
             <p className="text-lg">
               <FaRegBookmark />
             </p>
