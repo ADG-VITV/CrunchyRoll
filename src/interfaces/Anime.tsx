@@ -23,4 +23,6 @@ export interface Anime {
     };
   };
   title_english: string;
+  rating: string;
+  score: number;
 }
