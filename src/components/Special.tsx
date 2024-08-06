@@ -1,4 +1,6 @@
-import { FaPlay, FaRegBookmark } from "react-icons/fa";
+import {FaRegBookmark } from "react-icons/fa";
+import { LuPlay } from "react-icons/lu";
+
 import { Anime } from "@/interfaces/Anime";
 import { truncate } from "@/app/truncate";
 
@@ -26,11 +28,12 @@ const Special: React.FC<SpecialProps> = ({ apicall }) => {
         <p className="text-gray-500 py-2">Series &#x2B29; Sub | Dub </p>
         <p className="py-2">{truncatedDescription}</p>
         <div className="flex py-2">
-          <button className="bg-orange-600 text-black w-52 p-4 mr-3 h-11 font-semibold flex items-center">
-            <FaPlay />
-            &nbsp; Start Watching
+          <button className="bg-orange-600 text-black w-52 p-4 mr-3 h-11 font-semibold flex items-center justify-center hover:bg-orange-500
+          transition-all">
+            <LuPlay />
+            &nbsp; Start Watching E1
           </button>
-          <button className="text-orange-600 text-l w-52 p-4 mr-3 h-11 font-semibold flex items-center border-orange-600 border-[3px]">
+          <button className="text-orange-600 text-l w-52 p-4 mr-3 h-11 font-semibold flex items-center justify-center border-orange-600 border-[3px]">
             <p className="text-lg">
               <FaRegBookmark />
             </p>
