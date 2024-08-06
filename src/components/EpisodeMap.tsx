@@ -33,7 +33,7 @@ const EpisodeMap: React.FC<EpisodeMapProp> = ({ apicall }) => {
             />
           ))}
         </div>
-        <h1 className="text-white mx-16 my-2 text-2xl">Today</h1>
+        <h1 className="text-white mx-16 my-2 text-2xl">Yesterday</h1>
         <hr className="mx-16 bg-gray-500 border-0 h-px" />
         <div className="flex mx-16 flex-wrap">
           {apicall.map((anime: Anime) => (
