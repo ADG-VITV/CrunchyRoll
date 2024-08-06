@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FaStar, FaRegStar, FaPlay, FaBookmark, FaPlus } from 'react-icons/fa';
 import { Anime } from '@/interfaces/Anime';
-
+import { truncate } from '@/app/truncate';
 // Function to fetch data from the API
 const fetchAnimeData = async (id: number) => {
   const res = await fetch(`https://api.jikan.moe/v4/anime/${id}`, {
@@ -33,30 +33,30 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
 //   );
 
   return (
-    <div className="relative min-h-screen bg-gray-900 text-white">
+    <div className="relative min-h-screen bg-black text-white">
       <main className="pt-20 px-8 pb-8">
         <div className="relative">
           <Image src={anime.images.webp.image_url} alt={anime.title} layout="fill" className="object-cover blur-lg" />
           <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute top-0 left-0 w-full flex justify-center items-center p-4">
-            <Image src={anime.trailer.images.image_url} alt={anime.title} width={200} height={300} className="relative z-10 rounded-md" />
+          <div className="absolute top-0 left-0 w-full flex justify-center items-center  ">
+            <Image src={anime.trailer.images.image_url} alt={anime.title} width={400} height={275} className="relative z-10 rounded-md" />
           </div>
         </div>
-        <div className="flex mt-8">
+        <div className="flex mt-[20rem]">
           <div className="w-2/3 pr-8">
-            <h1 className="text-4xl font-bold">{anime.title}</h1>
-            <div className="flex items-center mt-2">
+            <h1 className="text-4xl font-bold ml-[5rem]">{anime.title}</h1>
+            <div className="flex items-center mt-2 ml-[5rem]">
               {anime.score}
             </div>
-            <div className="flex space-x-4 mt-4">
+            <div className="flex space-x-4 mt-4 ml-[5rem]">
               <button className="flex items-center border border-orange-500 text-orange-500 px-4 py-2 rounded">
                 <FaBookmark className="mr-2" /> Add to Watchlist
               </button>
-              <button className="flex items-center border border-orange-500 text-orange-500 px-4 py-2 rounded">
+              <button className="flex items-center border-none text-gray-500 text-sm px-4 py-2 rounded">
                 <FaPlus className="mr-2" /> Add to Crunchylist
               </button>
             </div>
-            <p className="mt-4">{anime.synopsis}</p>
+            <p className="mt-4 ml-[5rem]">{truncate(anime.synopsis,100)}</p>
           </div>
           <div className="w-1/3">
             <div className="relative">

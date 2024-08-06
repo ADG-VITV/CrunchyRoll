@@ -34,8 +34,8 @@ export default function SwiperNoSwiping() {
                     <MdKeyboardArrowRight className="text-white text-5xl rotate-180 z-[9] absolute top-[25vh] hover:text-gray-500 transition-colors cursor-pointer" />
                 </div>
                 <img src={landingPageApi[index].logoImage} alt="" className="w-[20rem] z-[5] pb-4 ml-[3.25rem] scale-75 absolute bottom-[29rem] left-0" />
-                <p className="text-gray-500 text-sm font-normal pb-2 ml-[3.25rem] absolute top-[30rem] left-4 z-[5]">Sub | Dub</p>
-                <p className="text-white text-md font-normal w-[27rem] pb-6 ml-[3.25rem] absolute top-[36rem] left-4 z-[5]">{landingPageApi[index].description}</p>
+                <p className="text-gray-500 text-sm font-normal pb-2 ml-[3.25rem] absolute top-[20rem] left-4 z-[5]">Sub | Dub</p>
+                <p className="text-white text-md font-normal w-[27rem] pb-6 ml-[3.25rem] absolute top-[24rem] left-4 z-[5]">{landingPageApi[index].description}</p>
                 <div className="flex py-2 ml-[3.25rem] absolute top-[31rem] left-4 z-[5]">
                     <button className="bg-orange-600 text-black w-52 p-4 mr-3 h-11 font-semibold flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
                         <LuPlay />
