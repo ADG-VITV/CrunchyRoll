@@ -1,40 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-
-interface CardItem {
-  mal_id: number;
-  title: string;
-  images: {
-    jpg: {
-      image_url: string;
-      small_image_url: string;
-      large_image_url: string;
-    };
-    webp: {
-      image_url: string;
-      small_image_url: string;
-      large_image_url: string;
-    };
-  };
-  trailer: {
-    youtube_id: string;
-    url: string;
-    embed_url: string;
-    images: {
-      image_url: string;
-      small_image_url: string;
-      medium_image_url: string;
-      large_image_url: string;
-      maximum_image_url: string;
-    };
-  };
-  title_english: string;
-}
+import { Anime } from '@/interfaces/Anime';
+import { defaultApi } from '@/app/defaultApi';
 
 interface CardProps {
-  items: CardItem[];
+  items: Anime[];
 }
 
 const Card: React.FC<CardProps> = ({ items }) => {
+  items = items || [defaultApi];
   const productContainerRefs = useRef<HTMLDivElement[]>([]);
   const nxtBtnRefs = useRef<HTMLButtonElement[]>([]);
   const preBtnRefs = useRef<HTMLButtonElement[]>([]);
