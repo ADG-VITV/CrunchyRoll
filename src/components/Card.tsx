@@ -51,7 +51,7 @@ const Card: React.FC<CardProps> = ({ items }) => {
       <div className="product-container overflow-auto scroll-smooth flex w-full h-full mr-10">
         {items.map((item, index) => (
           <div className={`product-card flex flex-shrink-0 flex-grow-0 flex-auto mr-7 ${index === 0 ? 'ml-[4rem]' : ''} ${index === (items.length - 1) ? 'mr-[4rem]' : ''}`} key={item.mal_id}>
-            <img src={item.images.webp.large_image_url} alt={item.title_english} className="h-[23rem] w-[14.5rem] object-cover"/>
+            <img src={item.images.webp.large_image_url} alt={item.title_english} className="h-[23rem] w-[14.5rem] object-cover" loading="lazy"/>
           </div>
         ))}
       </div>

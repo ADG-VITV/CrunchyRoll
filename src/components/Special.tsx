@@ -17,6 +17,7 @@ const Special: React.FC<SpecialProps> = ({ apicall }) => {
             src={apicall.trailer.images.maximum_image_url}
             alt={apicall.title}
             className="w-full h-full"
+            loading="lazy"
           />
         )}
       </div>

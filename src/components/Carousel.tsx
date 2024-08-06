@@ -29,6 +29,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
               src={item.trailer.images.maximum_image_url}
               alt={item.title_english}
               className="w-full h-full z-[-1]"
+              loading="lazy"
             />
             <h3 className="mt-[3px] text-white">{item.title_english}</h3>
           </div>

@@ -6,6 +6,7 @@ export default function Episode (props: any) {
           src={props.img}
           alt={props.name}
           className="w-36 h-full mr-4"
+          loading="lazy"
         />
       </div>
       <div className="w-[50%] flex flex-col justify-between">
