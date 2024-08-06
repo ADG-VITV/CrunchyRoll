@@ -40,7 +40,7 @@ body {
   color: white;
 } */
 
-.container {
+/* .container {
   position: relative;
 }
 
@@ -114,31 +114,22 @@ body {
 
 .cardContainer:hover .animeInfo{
     opacity: 1;
-}
+} */
 
-
-button:hover span {
-  width: 100%;
-}
-
-button:hover {
-  border: none;
-}
-
-/* PRODUCTS */
-.product {
+/* animeS */
+.anime {
   position: relative;
   overflow: hidden;
 }
 
-.product-container {
+.anime-container {
   overflow: auto; /* Enable scrolling for the container */
   display: flex;
   /* width: calc(100% - 80px); Adjust for button width */
   height: 100%;
 }
 
-.product-container::-webkit-scrollbar {
+.anime-container::-webkit-scrollbar {
   display: none; /* Hide the scrollbar */
 }
 
@@ -164,4 +155,9 @@ button:hover {
 
 .nxt-btn {
   right: 10px; /* Adjust as needed */
+}
+
+
+.overlay:hover .animeDesc{
+  display: none;
 }
