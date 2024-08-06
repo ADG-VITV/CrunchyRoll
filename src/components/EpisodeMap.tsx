@@ -46,6 +46,7 @@ const EpisodeMap: React.FC<EpisodeMapProp> = ({ apicall }) => {
           />
         ))}
       </div>
+      <button className="text-white bg-gray-800 mx-16 w-[92vw] h-10 hover:bg-gray-700 transition-all">SHOW MORE</button>
     </>
   );
 };

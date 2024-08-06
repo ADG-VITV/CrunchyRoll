@@ -69,12 +69,13 @@ const Home: React.FC = async () => {
       <section>
         <Special apicall={specialView} />
       </section>
-      <section>
-        <Special apicall={specialView2} />
-      </section>
       <section className="w-[100vw]">
         <EpisodeMap apicall={episodeView} />
       </section>
+      <section>
+        <Special apicall={specialView2} />
+      </section>
+
       <section className="flex flex-col items-center m-4">
         <img
           src="https://www.crunchyroll.com/build/assets/img/home/yuzu.png"
