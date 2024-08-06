@@ -4,7 +4,7 @@ interface BannerProps{
 }
 const Banner: React.FC<BannerProps> = ({apicall}) => {
   return (
-    <section className="w-[80vw] h-[30rem] mx-auto my-12 object-cover">
+    <section className="w-[calc((100vw-8rem))] h-[30rem] mx-auto mb-16 object-cover">
       {apicall.trailer?.images?.maximum_image_url && (
         <img
           src={apicall.trailer.images.maximum_image_url}

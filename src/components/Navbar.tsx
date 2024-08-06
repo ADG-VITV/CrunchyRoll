@@ -7,7 +7,7 @@ import { PiCrownSimpleFill } from "react-icons/pi";
 export default function Navbar() {
   return (
     <>
-      <nav className="flex items-center justify-between h-16 px-16 bg-[#23252b] text-white fixed w-[100vw] z-10">
+      <nav className="flex items-center justify-between h-16 px-16 bg-[#23252b] text-white fixed w-[100vw] z-20">
         <svg
           className="logo-icon fill-current text-orange-600 mr-4 w-[18rem]"
           xmlns="http://www.w3.org/2000/svg"

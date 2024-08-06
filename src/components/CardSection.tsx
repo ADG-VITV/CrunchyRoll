@@ -7,8 +7,8 @@ interface CardSection {
 
 const CardSection: React.FC<CardSection> = ({ item }) => {
   return(
-    <div className="">
-      <Card items={item} />;
+    <div className="mb-16">
+      <Card items={item} />
     </div>
   ) 
 };

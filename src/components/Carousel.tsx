@@ -28,12 +28,11 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
             <img
               src={item.trailer.images.maximum_image_url}
               alt={item.title_english}
-              className="w-full h-full z-[-1]"
+              className="w-full h-[95vh] z-[-1] object-cover mt-16"
               loading="lazy"
             />
-            <h3 className="mt-[3px] text-white">{item.title_english}</h3>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> 
       ))}
     </SwiperComponent>
   );

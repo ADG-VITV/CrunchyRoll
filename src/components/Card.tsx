@@ -52,29 +52,7 @@ const Card: React.FC<CardProps> = ({ items }) => {
       </button>
       <div className="anime-container overflow-auto scroll-smooth flex w-full h-full mr-10">
         {items.map((item, index) => (
-          // .anime-card .overlay {
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   width: 100%;
-          //   height: 100%;
-          //   background-color: rgba(27, 26, 26, 0.9); /* Adjust the color and opacity as needed */
-          //   display: flex;
-          //   padding: 1rem;
-          //   color: white;
-          //   opacity: 0;
-          //   transition: opacity 0.3s ease;
-          //   z-index: 2;
-          // }
           
-          // .anime-card:hover .overlay {
-          //   opacity: 1;
-          // }
-          
-          // .anime-card > * {
-          //   position: relative;
-          //   z-index: 1;
-          // }
           <div className={`anime-card relative overflow-hidden flex-col flex-shrink-0 flex-grow-0 flex-auto mr-7 ${index === 0 ? 'ml-[4rem]' : ''} ${index === (items.length - 1) ? 'mr-[4rem]' : ''}`} key={item.mal_id}>
             <img src={item.images.webp.large_image_url} alt={item.title_english} className="h-[23rem] w-[14.5rem] object-cover pb-2" loading="lazy" />
             <p className='text-white w-[14.5rem] pb-2 text-sm font-normal animeDesc'>{item.title_english}</p>

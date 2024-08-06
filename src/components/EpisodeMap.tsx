@@ -8,7 +8,7 @@ interface EpisodeMapProp {
 const EpisodeMap: React.FC<EpisodeMapProp> = ({ apicall }) => {
   apicall = apicall || [defaultApi];
   return (
-    <div className="w-full">
+    <div className="w-full mb-16">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
