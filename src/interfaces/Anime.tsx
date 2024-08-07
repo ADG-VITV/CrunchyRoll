@@ -28,4 +28,12 @@ export interface Anime {
   score:number;
   scored_by:number;
   background: string;
+  producers:
+        {
+          mal_id: number
+          type: string,
+          name: string,
+          url: string
+        },
+      
 }

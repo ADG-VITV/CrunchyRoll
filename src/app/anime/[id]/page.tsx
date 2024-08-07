@@ -52,20 +52,36 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
               <button className="flex items-center border border-orange-500 text-orange-500 px-4 py-2 rounded">
                 <FaBookmark className="mr-2" /> Add to Watchlist
               </button>
-              <button className="flex items-center border-none text-gray-500 text-sm px-4 py-2 rounded">
+              <button className="flex items-center border-none text-gray-500 text- px-4 py-2 rounded">
                 <FaPlus className="mr-2" /> Add to Crunchylist
               </button>
             </div>
-            <p className="mt-4 ml-[5rem]">{truncate(anime.synopsis,100)}</p>
+            <p className="mt-4 ml-[5rem] ">{truncate(anime.synopsis,100)}</p>
+            <div className="mt-[5rem] ml-[5rem]">
+                <div className="flex justify-between">
+            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
+            <h2 className='text-white'>{anime.producers.name}</h2>
+            </div>
+            <hr className='w-full mt-[2rem] ' />
+            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
+            <hr className='w-full mt-[2rem] ' />
+            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
+            <hr className='w-full mt-[2rem] ' />
+            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
+            <hr className='w-full mt-[2rem] ' />
+            </div>
           </div>
-          <div className="w-1/3">
+          <div className="w-1/3 h-">
             <div className="relative">
               <iframe
                 src={anime.trailer.embed_url}
                 frameBorder="0"
-                className="w-full h-48 rounded-md"
+                className="w-full h-72 rounded-md"
                 allowFullScreen
               ></iframe>
+              <button className="flex justify-center items-center border w-full text-center border-none bg-orange-500 text-black px-4 py-2 ">
+                 Start Watching E
+              </button>
               {/* <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 px-2 py-1 text-sm">
                 {anime.duration}
               </div> */}
