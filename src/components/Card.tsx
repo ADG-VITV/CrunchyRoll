@@ -102,9 +102,9 @@ const Card: React.FC<CardProps> = ({ items }) => {
                     </p>
                   </div>
                 </div>
-                <div className="flex w-full items-end text-orange-500 text-xl gap-6 m[-1rem]">
+                <div className="flex w-full items-end text-orange-500 text-xl gap-4 m[-1rem]">
                   <LuPlay />
-                  <FaRegBookmark />
+                  <FaRegBookmark className="text-[1.15rem]"/>
                   <FaPlus />
                 </div>
               </div>
