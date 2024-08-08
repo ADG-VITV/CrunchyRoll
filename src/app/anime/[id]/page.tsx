@@ -36,24 +36,36 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
     <div className="relative min-h-screen bg-black text-white">
       <main className="pt-20 px-8 pb-8">
         <div className="relative">
-          <Image src={anime.images.webp.image_url} alt={anime.title} layout="fill" className="object-cover blur-lg" />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="flex justify-center blur-sm w-full h-[15rem]" style={{ backgroundImage: `url(${anime.trailer.images.maximum_image_url})` }}>
+            
+          </div>
+          <div>
+          {/* <Image src={anime.trailer.images.maximum_image_url} alt={anime.title} className='z= -1 absolute w-[50%]'   width={900} height={900}  ></Image> */}
+          <Image src={anime.trailer.images.maximum_image_url} alt={anime.title} width= {500} height={700} className="object-cover relative h-full w-[40%]" />
+          </div>
+          {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
           <div className="absolute top-0 left-0 w-full flex justify-center items-center  ">
-            <Image src={anime.trailer.images.image_url} alt={anime.title} width={400} height={275} className="relative z-10 rounded-md" />
+            {/* <Image src={anime.trailer.images.image_url} alt={anime.title} width={400} height={275} className="relative z-10 rounded-md" /> */}
           </div>
         </div>
-        <div className="flex mt-[20rem]">
+        <div className="flex mt-[5rem] ">
           <div className="w-2/3 pr-8">
             <h1 className="text-4xl font-bold ml-[5rem]">{anime.title}</h1>
             <div className="flex items-center mt-2 ml-[5rem]">
-              {anime.score}
+            <p className='text-gray-500 text-sm font-normal animeDesc'>Sub | Dub</p>
+              
+              
+               
             </div>
+            <div className=' ml-[5rem] mt-[1rem]'>
+                {anime.score}
+                </div>
             <div className="flex space-x-4 mt-4 ml-[5rem]">
-              <button className="flex items-center border border-orange-500 text-orange-500 px-4 py-2 rounded">
-                <FaBookmark className="mr-2" /> Add to Watchlist
-              </button>
-              <button className="flex items-center border-none text-gray-500 text- px-4 py-2 rounded">
-                <FaPlus className="mr-2" /> Add to Crunchylist
+              <button className="flex items-center border border-orange-500 hover:border-orange-400 tracnoing-tighter font-semibold text-orange-500 px-4 py-2 rounded">
+                <FaBookmark className="mr-2" /> ADD TO WATCHLIST
+              </button> 
+              <button className="flex items-center border-none text-gray-500 tracking-tighter hover:bg-zinc-800 hover:text-white font-semibold px-4 py-2 ">
+                <FaPlus className="mr-2" /> ADD TO CRUNCHY LIST
               </button>
             </div>
             <p className="mt-4 ml-[5rem] ">{truncate(anime.synopsis,100)}</p>
@@ -62,13 +74,13 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
             <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
             <h2 className='text-white'>{anime.producers.name}</h2>
             </div>
-            <hr className='w-full mt-[2rem] ' />
-            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
-            <hr className='w-full mt-[2rem] ' />
-            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
-            <hr className='w-full mt-[2rem] ' />
-            <h1 className= " text-3xl text-bold   text-white">Publisher</h1>
-            <hr className='w-full mt-[2rem] ' />
+            <hr className='w-full mt-[1rem] ' />
+            <h1 className= " text-3xl text-bold  mt-[1rem] text-white">Audio</h1>
+            <hr className='w-full mt-[1rem] ' />
+            <h1 className= " text-3xl text-bold  mt-[1rem] text-white">Subtitles</h1>
+            <hr className='w-full mt-[1rem] ' />
+           
+           
             </div>
           </div>
           <div className="w-1/3 h-">
