@@ -36,7 +36,7 @@ export default function SwiperNoSwiping() {
                 <div onClick={() => handleIncrement()} className="absolute top-[10rem] z-[9] left-0 w-4 h-4">
                     <MdKeyboardArrowRight className="text-white text-5xl absolute top-[25vh] z-[9] left-[97vw] hover:text-gray-500 transition-colors cursor-pointer" />
                 </div>
-                <div className="absolute top-[20vh] left-10 flex flex-col">
+                <div className="absolute bottom-[42vh] left-10 flex flex-col">
                     <img src={landingPageApi[index].logoImage} alt="" className="w-[20rem] z-[5] pb-4 ml-[3.25rem] scale-75" />
                     <p className="text-gray-500 text-sm font-normal pb-2 ml-[3.25rem] z-[5]">Sub | Dub</p>
                     <p className="text-white text-md font-normal w-[27rem] pb-6 ml-[3.25rem] z-[5]">{landingPageApi[index].description}</p>
