@@ -1,4 +1,4 @@
-import { fetchAnime, reverseFetchAnime } from "./action";
+import { fetchAnime } from "./action";
 import CarouselMap from "@/components/CarouselMap";
 import CardSection from "@/components/CardSection";
 import Special from "@/components/Special";
