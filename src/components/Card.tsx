@@ -64,7 +64,7 @@ const Card: React.FC<CardProps> = ({ items }) => {
       <div className="anime-container overflow-auto scroll-smooth flex w-full h-full mr-10">
         {items.map((item, index) => (
           <div key={item.mal_id}>
-            <Link href={`http://localhost:3000/anime/${item.mal_id}`}>
+            <Link href={`/anime/${item.mal_id}`}>
           <div
             className={`anime-card relative overflow-hidden flex-col flex-shrink-0 flex-grow-0 flex-auto mr-7 ${
               index === 0 ? "ml-[4rem]" : ""
