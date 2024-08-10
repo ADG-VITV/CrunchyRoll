@@ -3,7 +3,7 @@ import { LuPlay } from "react-icons/lu";
 
 import { Anime } from "@/interfaces/Anime";
 import { truncate } from "@/app/truncate";
-
+import Link from "next/link";
 interface SpecialProps {
   apicall: Anime;
 }
@@ -15,12 +15,14 @@ const Special: React.FC<SpecialProps> = ({ apicall }) => {
     <section className="w-[calc(100vw-8rem)] h-[25rem] flex justify-between my-16 mx-auto text-white">
       <div className="w-[50%] mr-8">
         {apicall.trailer?.images?.medium_image_url && (
+          <Link href={`/anime/${apicall.mal_id}`}>
           <img
             src={apicall.trailer.images.maximum_image_url}
             alt={apicall.title}
             className="w-full h-full"
             loading="lazy"
           />
+          </Link>
         )}
       </div>
       <div className="w-[50%] flex flex-col justify-center text-white">

@@ -28,7 +28,6 @@ export default function SwiperNoSwiping() {
     return (
         <>
             <div className={`relative overflow-hidden transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}>
-
                 <img src={landingPageApi[index].heroImage} alt="" className="h-[105vh] z-[5] w-[100vw] mt-16 object-cover" />
                 <div onClick={() => handleDecrement()} className="absolute top-[10rem] z-[9] left-0 w-4 h-4">
                     <MdKeyboardArrowRight className="text-white text-5xl rotate-180 z-[9] absolute top-[25vh] hover:text-gray-500 transition-colors cursor-pointer" />

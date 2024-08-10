@@ -1,4 +1,4 @@
-import { fetchAnime } from "./action";
+import { fetchAnime, reverseFetchAnime } from "./action";
 import CarouselMap from "@/components/CarouselMap";
 import CardSection from "@/components/CardSection";
 import Special from "@/components/Special";
@@ -12,16 +12,21 @@ import Watchmore from "@/components/Watchmore";
 import SwiperNoSwiping from "@/components/SwiperNoSwiping";
 
 const Home: React.FC = async () => {
-
   const seasonalSamplerView = await fetchAnime(
+    "https://api.jikan.moe/v4/seasons/now"
+  );
+  const reverseSeasonalSamplerView = await reverseFetchAnime(
     "https://api.jikan.moe/v4/seasons/now"
   );
 
   const sportsAnimeView = await fetchAnime(
     "https://api.jikan.moe/v4/anime?q=sports&sfw&limit=15"
   );
+  const reverseSportsAnimeView = await reverseFetchAnime(
+    "https://api.jikan.moe/v4/anime?q=sports&sfw&limit=15"
+  );
 
-  const topAnimeView = await fetchAnime(
+  const topAnimeView = await reverseFetchAnime(
     "https://api.jikan.moe/v4/top/anime?sfw&limit=15"
   );
   const specialViewArray = await fetchAnime(
@@ -36,6 +41,10 @@ const Home: React.FC = async () => {
   const episodeView = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now?limit=5"
   );
+  const episodeView2 = await reverseFetchAnime(
+    "https://api.jikan.moe/v4/top/anime?sfw&limit=5"
+  );
+
   return (
     <div className="relative">
       {/* <CarouselMap item={carouselView} /> */}
@@ -69,7 +78,14 @@ const Home: React.FC = async () => {
           <Special apicall={specialView} />
         </section>
         <section className="w-[100vw]">
+          <h1 className="text-white mx-16 my-4 text-3xl">New Episodes</h1>
+          <h1 className="text-white mx-16 my-2 text-2xl">Today</h1>
           <EpisodeMap apicall={episodeView} />
+          <h1 className="text-white mx-16 my-2 text-2xl">Yesterday</h1>
+          <EpisodeMap apicall={episodeView2} />
+          <button className="text-white bg-gray-800 mx-16 w-[calc(100vw-8rem)] h-10 hover:bg-gray-700 transition-all">
+            SHOW MORE
+          </button>
         </section>
         <section>
           <Special apicall={specialView2} />
@@ -78,12 +94,12 @@ const Home: React.FC = async () => {
           <Banner apicall={bannerView2} />
         </section>
         <Heading title={"Most Popular This Season"} subtitle={""} />
-        <CardSection item={seasonalSamplerView} />
+        <CardSection item={reverseSeasonalSamplerView} />
         <Heading
           title={"Tamil Dubs Available on Crunchyroll!"}
           subtitle={"Great anime dubbed in Tamil"}
         />
-        <CardSection item={sportsAnimeView} />
+        <CardSection item={reverseSportsAnimeView} />
         <section>
           <Special apicall={specialView3} />
         </section>
