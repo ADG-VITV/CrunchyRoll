@@ -32,7 +32,7 @@ const Home: React.FC = async () => {
   const specialViewArray = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now?limit=15"
   );
-  let specialView: Anime = specialViewArray[1] || defaultApi;
+  let specialView: Anime = specialViewArray ? specialViewArray[1] : defaultApi;
   let specialView2: Anime = specialViewArray[2] || defaultApi;
   let specialView3: Anime = specialViewArray[5] || defaultApi;
   let bannerView: Anime = specialViewArray[3] || defaultApi;
