@@ -8,7 +8,7 @@ export default function Banner({ image }: { image: string }) {
                 </div>
             ) : (
                 <div className="pt-16 overflow-hidden">
-                    <img src="/DeathCodeLogo.jpeg" alt="Deathcode" className="w-full h-[20rem] blur-sm"/>
+                    <div className="w-full h-[20rem]"></div>
                     <img src="/DeathCodeLogo.jpeg" alt="Deathcode" className="absolute h-[20rem] top-16 left-[30vw]"/>
                 </div>
                 
