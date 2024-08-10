@@ -8,6 +8,7 @@ import Banner from "./Banner";
 import Footer from "@/components/Footer";
 import Media from "@/app/anime/[id]/Media";
 import Details from "@/app/anime/[id]/Details";
+import { defaultApi } from "@/app/defaultApi";
 
 const AnimeDetail = async ({ params }: { params: { id: string } }) => {
   const id = Number(params.id);
@@ -16,7 +17,8 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
     throw new Error("Invalid ID");
   }
 
-  const anime: Anime = await fetchAnime(`https://api.jikan.moe/v4/anime/${id}`);
+  const anime: Anime =
+    (await fetchAnime(`https://api.jikan.moe/v4/anime/${id}`)) || defaultApi;
 
   return (
     <>
