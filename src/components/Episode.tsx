@@ -19,7 +19,7 @@ export default function Episode(props: any) {
           <div className="flex justify-between">
             <p className="text-sm text-gray-500">Sub | Dub</p>
             <p className="text-sm text-[rgb(41,189,187)]">
-              {props.duration}:00
+              {props.duration? props.duration: 25}:00
             </p>
           </div>
         </div>
