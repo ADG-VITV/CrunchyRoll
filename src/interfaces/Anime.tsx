@@ -1,4 +1,6 @@
 export interface Anime {
+  genres: any;
+  studios: any;
   mal_id: number;
   title: string;
   synopsis: string;
