@@ -94,12 +94,12 @@ const Home: React.FC = async () => {
           <Banner apicall={bannerView2} />
         </section>
         <Heading title={"Most Popular This Season"} subtitle={""} />
-        <CardSection item={reverseSeasonalSamplerView} />
+        <CardSection item={seasonalSamplerView.reverse()} />
         <Heading
           title={"Tamil Dubs Available on Crunchyroll!"}
           subtitle={"Great anime dubbed in Tamil"}
         />
-        <CardSection item={reverseSportsAnimeView} />
+        <CardSection item={reverseSportsAnimeView.reverse()} />
         <section>
           <Special apicall={specialView3} />
         </section>
