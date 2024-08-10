@@ -1,5 +1,4 @@
 import { fetchAnime } from "./action";
-import CarouselMap from "@/components/CarouselMap";
 import CardSection from "@/components/CardSection";
 import Special from "@/components/Special";
 import { Anime } from "@/interfaces/Anime";
@@ -18,6 +17,7 @@ const Home: React.FC = async () => {
   const reverseSeasonalSamplerView = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now"
   );
+
 
   const sportsAnimeView = await fetchAnime(
     "https://api.jikan.moe/v4/anime?q=sports&sfw&limit=15"
