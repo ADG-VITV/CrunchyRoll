@@ -28,4 +28,5 @@ export interface Anime {
   score:number;
   scored_by:number;
   background: string;
+  producers: any;
 }

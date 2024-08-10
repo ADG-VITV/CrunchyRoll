@@ -7,6 +7,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { FaRegBookmark } from "react-icons/fa";
 import { LuPlay } from "react-icons/lu";
 import { FaPlus } from "react-icons/fa6";
+import Link from "next/link";
 
 interface CardProps {
   items: Anime[];
@@ -62,6 +63,7 @@ const Card: React.FC<CardProps> = ({ items }) => {
       </button>
       <div className="anime-container overflow-auto scroll-smooth flex w-full h-full mr-10">
         {items.map((item, index) => (
+          <Link href={`http://localhost:3000/anime/${item.mal_id}`}>
           <div
             className={`anime-card relative overflow-hidden flex-col flex-shrink-0 flex-grow-0 flex-auto mr-7 ${
               index === 0 ? "ml-[4rem]" : ""
@@ -110,9 +112,11 @@ const Card: React.FC<CardProps> = ({ items }) => {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </section>
+
   );
 };
 
