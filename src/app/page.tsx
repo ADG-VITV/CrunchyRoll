@@ -79,7 +79,7 @@ const Home: React.FC = async () => {
         <section className="w-[100vw]">
           <h1 className="text-white mx-16 my-4 text-3xl">New Episodes</h1>
           <h1 className="text-white mx-16 my-2 text-2xl">Today</h1>
-          {episodeView && <EpisodeMap apicall={episodeView.reverse()} />}
+          {episodeView && <EpisodeMap apicall={episodeView} />}
           <h1 className="text-white mx-16 my-2 text-2xl">Yesterday</h1>
           {episodeView2 && <EpisodeMap apicall={episodeView2.reverse()} />}
           <button className="text-white bg-gray-800 mx-16 w-[calc(100vw-8rem)] h-10 hover:bg-gray-700 transition-all">
