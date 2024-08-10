@@ -12,12 +12,9 @@ import Watchmore from "@/components/Watchmore";
 import SwiperNoSwiping from "@/components/SwiperNoSwiping";
 
 const Home: React.FC = async () => {
-  const carouselView = await fetchAnime(
-    "https://api.jikan.moe/v4/seasons/now?limit=5"
-  );
 
   const seasonalSamplerView = await fetchAnime(
-    "https://api.jikan.moe/v4/seasons/now?limit=15"
+    "https://api.jikan.moe/v4/seasons/now"
   );
 
   const sportsAnimeView = await fetchAnime(

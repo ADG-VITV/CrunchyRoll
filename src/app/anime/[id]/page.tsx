@@ -24,10 +24,10 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-        <Banner image={anime.trailer.images.maximum_image_url}/>
-        <Media anime={anime}/>
-        <Details anime={anime}/>
-        <Footer/>
+        <Banner image={anime.trailer.images.maximum_image_url} key={id}/>
+        <Media anime={anime} key={id}/>
+        <Details anime={anime} key={id}/>
+        <Footer key={id}/>
     </>
     // <div className="relative min-h-screen bg-black text-white">
     //   <main className="pt-20">
