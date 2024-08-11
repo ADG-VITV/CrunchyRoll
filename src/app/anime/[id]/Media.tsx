@@ -4,7 +4,9 @@ import {
     FaPlus,
 } from "react-icons/fa";
 import { Anime } from "@/interfaces/Anime";
-
+import { LuPlay } from "react-icons/lu";
+import { FiShare2 } from "react-icons/fi";
+import Link from "next/link";
 interface MediaProps {
     anime: Anime;
 }
@@ -13,8 +15,14 @@ export default function Media({ anime }: { anime: any }) {
         <div className="mx-[10rem] my-16 flex text-white justify-between">
             <div className="flex flex-col justify-between">
                 <div>
-                    <h1 className="text-4xl">{anime.title_english}</h1>
+                    <div className="flex flex-row justify-between">
+                    <h1 className="text-4xl">{anime.title_english}</h1> 
+                    <Link href={"#"} >
+                    <FiShare2 className="text-2xl mt-[0.5rem]  text-gray-600 mr-[3rem]"  />
+                    </Link>
+                    </div>
                     <p className="text-gray-500 text-sm font-normal animeDesc my-4">
+                        
                         Sub | Dub
                     </p>
                     <div className="flex items-center mt-2">
@@ -38,12 +46,14 @@ export default function Media({ anime }: { anime: any }) {
                 </div>
             </div>
             <div className="w-[25rem] flex flex-col justify-between">
+            
                 {anime.trailer.embed_url ?
                     <iframe
                         src={`${anime.trailer.embed_url}?autoplay=1`}
                         className="w-full h-[12rem]"
                     ></iframe> : <img src="/DeathCodeLogo.jpeg" alt="" className="w-full h-full" />}
                 <button className="flex justify-center items-center border w-full text-center border-none bg-orange-500 text-black my-2 px-4 py-2 ">
+                    <LuPlay className="text-black mr-2"  />
                     Start Watching E1
                 </button>
             </div>
