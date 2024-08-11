@@ -16,14 +16,14 @@ export default function Details({ anime }: { anime: any }) {
                             .join(", ")}
                     </h2>
                 </div>
-                <hr className="w-full my-[1rem] " />
+                <hr className="w-full my-[1rem] border-0 h-px bg-gray-600" />
                 <div className="flex justify-between">
                     <h1 className="text-bold   text-white">Genre</h1>
                     <h2 className="text-white">
                         {anime.genres.map((genre: { name: any; }) => genre.name).join(", ")}
                     </h2>
                 </div>
-                <hr className="w-full my-[1rem] " />
+                <hr className="w-full my-[1rem] border-0 h-px bg-gray-600 " />
                 <div className="flex justify-between">
                     <h1 className="text-bold   text-white">Studio</h1>
                     <h2 className="text-white">
@@ -32,7 +32,7 @@ export default function Details({ anime }: { anime: any }) {
                             .join(", ")}
                     </h2>
                 </div>
-                <hr className="w-full my-[1rem] " />
+                <hr className="w-full my-[1rem] border-0 h-px bg-gray-600 " />
             </div>
         </div>
     )

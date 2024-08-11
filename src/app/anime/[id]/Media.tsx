@@ -18,7 +18,7 @@ export default function Media({ anime }: { anime: any }) {
                     <div className="flex flex-row justify-between">
                     <h1 className="text-4xl">{anime.title_english}</h1> 
                     <Link href={"#"} >
-                    <FiShare2 className="text-2xl mt-[0.5rem]  text-gray-600 mr-[3rem]"  />
+                    <FiShare2 className="text-2xl mt-[0.5rem]  text-gray-200 mr-[3rem]"  />
                     </Link>
                     </div>
                     <p className="text-gray-500 text-sm font-normal animeDesc my-4">
