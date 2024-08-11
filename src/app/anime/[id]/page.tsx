@@ -27,6 +27,7 @@ const AnimeDetail = async ({ params }: { params: { id: string } }) => {
   // Fetch data
   const animeData = await fetchAnimeData(id);
   const anime: Anime = animeData.data;
+  
 
 //   const stars = Array.from({ length: 5 }, (_, index) =>
 //  <FaStar key={index} className="text-yellow-500" /> : <FaRegStar key={} />
