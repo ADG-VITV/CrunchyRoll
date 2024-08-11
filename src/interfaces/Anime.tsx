@@ -1,4 +1,6 @@
 export interface Anime {
+  genres: any;
+  studios: any;
   mal_id: number;
   title: string;
   synopsis: string;
@@ -28,12 +30,5 @@ export interface Anime {
   score:number;
   scored_by:number;
   background: string;
-  producers:
-        {
-          mal_id: number
-          type: string,
-          name: string,
-          url: string
-        },
-      
+  producers: any;
 }

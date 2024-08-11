@@ -1,5 +1,4 @@
 import { fetchAnime } from "./action";
-import CarouselMap from "@/components/CarouselMap";
 import CardSection from "@/components/CardSection";
 import Special from "@/components/Special";
 import { Anime } from "@/interfaces/Anime";
@@ -12,15 +11,17 @@ import Watchmore from "@/components/Watchmore";
 import SwiperNoSwiping from "@/components/SwiperNoSwiping";
 
 const Home: React.FC = async () => {
-  const carouselView = await fetchAnime(
-    "https://api.jikan.moe/v4/seasons/now?limit=5"
-  );
-
   const seasonalSamplerView = await fetchAnime(
-    "https://api.jikan.moe/v4/seasons/now?limit=15"
+    "https://api.jikan.moe/v4/seasons/now"
+  );
+  const reverseSeasonalSamplerView = await fetchAnime(
+    "https://api.jikan.moe/v4/seasons/now"
   );
 
   const sportsAnimeView = await fetchAnime(
+    "https://api.jikan.moe/v4/anime?q=sports&sfw&limit=15"
+  );
+  const reverseSportsAnimeView = await fetchAnime(
     "https://api.jikan.moe/v4/anime?q=sports&sfw&limit=15"
   );
 
@@ -30,18 +31,37 @@ const Home: React.FC = async () => {
   const specialViewArray = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now?limit=15"
   );
-  let specialView: Anime = specialViewArray[1] || defaultApi;
-  let specialView2: Anime = specialViewArray[2] || defaultApi;
-  let specialView3: Anime = specialViewArray[5] || defaultApi;
-  let bannerView: Anime = specialViewArray[3] || defaultApi;
-  let bannerView2: Anime = specialViewArray[4] || defaultApi;
+  let specialView: Anime =
+    specialViewArray && specialViewArray.length > 1
+      ? specialViewArray[1]
+      : defaultApi;
+  let specialView2: Anime =
+    specialViewArray && specialViewArray.length > 2
+      ? specialViewArray[2]
+      : defaultApi;
+  let specialView3: Anime =
+    specialViewArray && specialViewArray.length > 5
+      ? specialViewArray[5]
+      : defaultApi;
+  let bannerView: Anime =
+    specialViewArray && specialViewArray.length > 3
+      ? specialViewArray[3]
+      : defaultApi;
+  let bannerView2: Anime =
+    specialViewArray && specialViewArray.length > 4
+      ? specialViewArray[4]
+      : defaultApi;
+
 
   const episodeView = await fetchAnime(
     "https://api.jikan.moe/v4/seasons/now?limit=5"
   );
+  const episodeView2 = await fetchAnime(
+    "https://api.jikan.moe/v4/top/anime?sfw&limit=5"
+  );
+
   return (
     <div className="relative">
-      {/* <CarouselMap item={carouselView} /> */}
       <SwiperNoSwiping />
       <div className="absolute top-[90vh] w-full h-full z-10">
         <Heading
@@ -72,7 +92,14 @@ const Home: React.FC = async () => {
           <Special apicall={specialView} />
         </section>
         <section className="w-[100vw]">
-          <EpisodeMap apicall={episodeView} />
+          <h1 className="text-white mx-16 my-4 text-3xl">New Episodes</h1>
+          <h1 className="text-white mx-16 my-2 text-2xl">Today</h1>
+          {episodeView && <EpisodeMap apicall={episodeView} />}
+          <h1 className="text-white mx-16 my-2 text-2xl">Yesterday</h1>
+          {episodeView2 && <EpisodeMap apicall={episodeView2.reverse()} />}
+          <button className="text-white bg-gray-800 mx-16 w-[calc(100vw-8rem)] h-10 hover:bg-gray-700 transition-all">
+            SHOW MORE
+          </button>
         </section>
         <section>
           <Special apicall={specialView2} />
@@ -81,12 +108,16 @@ const Home: React.FC = async () => {
           <Banner apicall={bannerView2} />
         </section>
         <Heading title={"Most Popular This Season"} subtitle={""} />
-        <CardSection item={seasonalSamplerView} />
+        {reverseSeasonalSamplerView && (
+          <CardSection item={reverseSeasonalSamplerView.reverse()} />
+        )}
         <Heading
           title={"Tamil Dubs Available on Crunchyroll!"}
           subtitle={"Great anime dubbed in Tamil"}
         />
-        <CardSection item={sportsAnimeView} />
+        {reverseSportsAnimeView && (
+          <CardSection item={reverseSportsAnimeView.reverse()} />
+        )}
         <section>
           <Special apicall={specialView3} />
         </section>

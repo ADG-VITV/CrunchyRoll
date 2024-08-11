@@ -1,9 +1,11 @@
 import { Anime } from "@/interfaces/Anime";
+import Link from "next/link";
 interface BannerProps{
     apicall: Anime;
 }
 const Banner: React.FC<BannerProps> = ({apicall}) => {
   return (
+    <Link href={`/anime/${apicall.mal_id}`}>
     <section className="w-[calc((100vw-8rem))] h-[30rem] mx-auto mb-16 object-cover">
       {apicall.trailer?.images?.maximum_image_url && (
         <img
@@ -14,6 +16,7 @@ const Banner: React.FC<BannerProps> = ({apicall}) => {
         />
       )}
     </section>
+    </Link>
   );
 }
 export default Banner;
